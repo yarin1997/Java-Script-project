@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#grid-container {
+    margin: 16px auto;
+    min-height: calc(100vh - 32px);
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+section {
+    text-align: center;
+    padding: 16px;
+    background-color: #749ca3;
+    border-radius: 4px;
+    box-shadow: 1px 1px 8px black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    color:rgb(80, 99, 171);
+    font-size: 4rem;
+    font-weight: 700;
+    font-family:fantasy;
+}
+p{
+    color:floralwhite;
+    font-size: 1.5rem;
+}
+input{
+    width: 150px;
+    height: 40px;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 5px;
+    background-color: darkgrey;
+    
+}
+button{
+    width: 100px;
+    height: 40px;
+    background-color: whitesmoke;
+    color: darkgrey;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card {
+    width: 100%;
+    position: relative;
+    box-shadow: 1px 1px 8px black;
+}
+
+.card img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    transition: all 0.5s;
+}
+
+.back {
+    transform: rotateY(0deg);
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.card.flip .back {
+    transform: rotateY(180deg);
+}
+
+.card.flip .front {
+    transform: rotateY(0deg);
+}
