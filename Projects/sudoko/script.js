@@ -277,6 +277,14 @@ function checkRows(index1, index2, value, sudokuArr) {
         for (let j = row; j < row + 3; j++)
             if (sudokuArr[i][j].value == value && (i != index1 && j != index2)) {
                 console.log(`check the row of [${j}] [${j}]`)
+                 let element1 = document.getElementById(`cell${(index1 * 9) + (index2 + 1)}`);
+                let element2 = document.getElementById(`cell${(i * 9) + (j + 1)}`);
+                element1.classList.add('error');
+                element2.classList.add('error');
+                setTimeout(() => {
+                    element1.classList.remove('error');
+                    element2.classList.remove('error');
+                }, 2000)
                 return false
             }
     }
@@ -289,6 +297,14 @@ function checkColumns(index1, index2, value, sudokuArr) {
         for (let j = row; j < 9; j += 3)
             if (sudokuArr[i][j].value == value && (i != index1 && j != index2)) {
                 console.log(`check the row of [${i}][${j}]`)
+                 let element1 = document.getElementById(`cell${(index1 * 9) + (index2 + 1)}`);
+                let element2 = document.getElementById(`cell${(i * 9) + (j + 1)}`);
+                element1.classList.add('error');
+                element2.classList.add('error');
+                setTimeout(() => {
+                    element1.classList.remove('error');
+                    element2.classList.remove('error');
+                }, 2000)
                 return false;
             }
 }
